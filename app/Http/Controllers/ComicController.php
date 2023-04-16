@@ -20,5 +20,12 @@ class ComicController extends Controller
     {
         return view('comics.create');
     }
+
+    public function store(Request $request)
+    {
+        $comic = Comic::create($request->all());
+
+        return redirect()->route('comics.show', $comic);
+    }
 }
 
