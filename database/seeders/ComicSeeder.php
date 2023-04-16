@@ -9,7 +9,7 @@ class ComicSeeder extends Seeder
 {
     public function run()
     {
-        $comics = require 'comics.php';
+        $comics = require 'seeds/comics.php';
 
         foreach ($comics as $comic) {
             Comic::create([
