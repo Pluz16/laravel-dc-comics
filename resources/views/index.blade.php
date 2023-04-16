@@ -2,19 +2,34 @@
 
 @section('content')
     <div class="container">
-        <h1>Comics</h1>
-        <ul>
-            @foreach ($comics as $comic)
-                <li>
-                    <h2>{{ $comic->title }}</h2>
-                    <img src="{{ $comic->thumb }}" alt="{{ $comic->title }} cover">
-                    <p>{{ $comic->description }}</p>
-                    <p>Price: {{ $comic->price }}</p>
-                    <p>Series: {{ $comic->series }}</p>
-                    <p>Sale Date: {{ $comic->sale_date }}</p>
-                    <p>Type: {{ $comic->type }}</p>
-                </li>
-            @endforeach
-        </ul>
+        <h1>Comics List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Thumbnail</th>
+                    <th>Price</th>
+                    <th>Series</th>
+                    <th>Sale Date</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($comics as $comic)
+                    <tr>
+                        <td>{{ $comic->title }}</td>
+                        <td>{{ $comic->description }}</td>
+                        <td><img src="{{ $comic->thumb }}" alt="{{ $comic->title }}" height="50"></td>
+                        <td>{{ $comic->price }}</td>
+                        <td>{{ $comic->series }}</td>
+                        <td>{{ $comic->sale_date }}</td>
+                        <td>{{ $comic->type }}</td>
+                        <td><a href="{{ route('comics.show', $comic) }}">View</a></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 @endsection
