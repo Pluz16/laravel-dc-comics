@@ -9,5 +9,7 @@
         <p><strong>Series:</strong> {{ $comic->series }}</p>
         <p><strong>Sale Date:</strong> {{ $comic->sale_date }}</p>
         <p><strong>Type:</strong> {{ $comic->type }}</p>
+        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-primary">Edit Comic</a>
+
     </div>
 @endsection
