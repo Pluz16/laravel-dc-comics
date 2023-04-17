@@ -33,6 +33,22 @@ class ComicController extends Controller
         return view('comics.edit', compact('comic'));
     }
 
+    public function update(Request $request, Comic $comic)
+{
+    $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'description' => 'required',
+        'thumb' => 'required|url',
+        'price' => 'required|numeric',
+        'series' => 'required|max:255',
+        'sale_date' => 'required|date',
+        'type' => 'required|max:255',
+    ]);
+
+    $comic->update($validatedData);
+
+    return redirect()->route('comics.show', $comic)->with('success', 'Comic updated successfully');
+}
 
 
 }
