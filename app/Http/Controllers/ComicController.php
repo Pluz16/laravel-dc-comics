@@ -50,6 +50,14 @@ class ComicController extends Controller
     return redirect()->route('comics.show', $comic)->with('success', 'Comic updated successfully');
 }
 
+public function destroy(Comic $comic)
+{
+    $comic->delete();
+
+    return redirect()->route('comics.index')->with('message', 'Comic deleted successfully');
+}
+
+
 
 }
 

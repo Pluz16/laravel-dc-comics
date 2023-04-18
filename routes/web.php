@@ -17,3 +17,5 @@ Route::put('/comics/{comic}', [ComicController::class, 'update'])->name('comics.
 
 
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+Route::delete('/comics/{comic}', 'ComicController@destroy')->name('comics.destroy');
+
