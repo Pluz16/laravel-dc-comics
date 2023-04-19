@@ -44,7 +44,7 @@
             <input type="text" class="form-control" id="series" name="series" value="{{ old('series', $comic->series) }}" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group bg-primary">
             <label for="sale_date">Sale Date</label>
             <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{ old('sale_date', $comic->sale_date) }}" required>
         </div>
